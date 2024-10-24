@@ -68,6 +68,8 @@
                 <button class="btn btn-custom me-3" onclick="window.location.href='game.html';">Start Game</button>
                 <button class="btn btn-custom me-3" onclick="window.location.href='about.html';">About</button>
                 <button class="btn btn-custom me-3" onclick="window.location.href='rules.html';">Rules</button>
+                <button id='install' class="btn btn-custom me-3">Install App</button>
+            
             </div>
             
         </div>
@@ -83,23 +85,22 @@ window.addEventListener('beforeinstallprompt', (event) => {
   event.preventDefault();
   // Stash the event so it can be triggered later
   deferredPrompt = event;
-
-  // Automatically show the prompt after a delay
-  setTimeout(() => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt(); // Show the install prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
-        } else {
-          console.log('User dismissed the A2HS prompt');
-        }
-        deferredPrompt = null; // Clear the deferredPrompt
-      });
-    }
-  }, 2000); // Adjust the delay as necessary (3 seconds in this example)
 });
 
+
+document.getElementById('install').addEventListener('click', () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt(); // Show the install prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+        } else {
+            console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null; // Clear the deferredPrompt
+        });
+    }
+});
 
 
 
