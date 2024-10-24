@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Concepts</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Ubuntu", sans-serif
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header, section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border-color: #000000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header {
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+        #section1 {
+            position: relative;
+            cursor: pointer;
+        }
+        #section1 canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        #section2 {
+            position: relative;
+            overflow: hidden;
+        }
+        #section2 .halo {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(128,128,128,0.5) 0%, rgba(255,255,255,0) 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        #section3 .typewriter {
+    overflow: hidden;
+    border-right: .15em solid transparent;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    max-width: 0;
+    font-size: 2vw;
+    transition: max-width 3.5s steps(40, end);
+}
+
+/* Button styling */
+.btn-custom {
+            font-size: 1.2rem; /* To match the size with the lead text */
+            border: 2px solid black; /* Black border */
+            color: black; /* Black text */
+            background-color: white; /* White background */
+            transition: all 0.5s ease; /* Smooth transition on hover */
+        }
+
+        /* Hover effect */
+        .btn-custom:hover {
+            background-color: black; /* Black background on hover */
+            color: white; /* White text on hover */
+            border-color: black; /* Ensure border stays black */
+        }
+
+
+#section3 .typewriter.typing {
+    max-width: 100%;
+    border-right-color: black;
+    animation: blink-caret .75s step-end infinite;
+}
+
+
+
+h3.display-3 {
+    font-size: 3vw; 
+    font-weight: bold;/* Adjusts based on viewport width */
+}
+
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+}
+        #section4 {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="display-2">Hi Abhijit <i>bhaiya</i></h1>
+    </header>
+    <section id="section1">
+        <h3 class="display-3">Why does <i>Where Am I?</i>  lack fancy UI/UX?</h3>
+        <p class="lead"> <i>(Don't click this div before reading it completely)</i> Well, the secret behind <i>Where Am I?</i> is quite simple: during my endless hours of studying, I found it impossible to locate a game that didn’t scream “distraction” at me or induce an addiction worse than that of a cat meme. As a quiz aficionado, I dreamed of a game that wouldn't divert my attention from important things, like questioning my life choices. So, I decided to create <i>Where Am I?</i> that would shun all those flashy dopamine triggers. You know, the kind that makes you forget your homework and instead leads you into the black hole of the internet. Oh, and don’t worry, my lack of UI/UX skills is a minor issue—who needs aesthetics when you can have fun? <br/>
+            Oh, and I’m ready for you to click this section now. Trust me, the magic will happen!
+        </p>
+        <canvas></canvas>
+    </section>
+    <section id="section2">
+        <h3 class="display-3">Ok, but a game with no leaderboard? No competitive?</h3>
+        <p class="lead"><i>(You may move the cursor over this section for fun) </i>Ah, the competitive spirit! I mean, who wouldn’t want to turn a perfectly good knowledge-building experience into a battlefield? But let’s be real—<i>Where Am I?</i> is about giving your brain a well-deserved break from the relentless grind. The last thing I want is for my serious users to engage in a duel over <i>Where Am I?</i>. No thanks! The aim here is enlightenment, not warfare.
+        <div class="halo"></div>
+    </section>
+    <section id="section3">
+        <h3 class="display-3">But you said you don't know UI/UX. How are these effects?...</h3>
+        <div class="typewriter">Thanks to GDG Induction, I learnt about v0 by Vercel. You know, the real G!</div>
+        <button id="startTypewriter" class="btn btn-custom mt-3">See Fancy Text</button>
+    </section>
+    <section id="section4">
+        <h3 class="display-3">If you have anymore questions, do reach out personally!</h3>
+        <p class="lead"><a href="https://github.com/sortira" target="_blank">Here I am (pun intended)</a> Seriously, I'm not a ghost. I promise to respond!</p>
+    </section>
+    <footer class="text-center mt-5 mb-5">
+        <a href="index.html" class="btn btn-custom">Home</a>
+        <a href="game.html" class="btn btn-custom ml-3">Play Now</a>
+        <a href="rules.html" class="btn btn-custom ml-3">Rules</a>
+        <a href="about.html" class="btn btn-custom ml-3">About</a>
+        <p class="mt-4" style="color: grey; font-size: 0.9rem;">Copyright 2024-present Aritro 'sortira' Shome, Inspired by GeoGuessr.</p>
+    </footer>
+    <script>
+        // Sand particle effect
+        const section1 = document.getElementById('section1');
+        const canvas = section1.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = section1.offsetWidth;
+            canvas.height = section1.offsetHeight;
+        }
+
+        function createParticles() {
+            const text = section1.innerText;
+            ctx.font = '16px Arial';
+            ctx.fillStyle = 'black';
+            ctx.fillText(text, 10, 30);
+
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const pixels = imageData.data;
+
+            for (let y = 0; y < canvas.height; y += 4) {
+                for (let x = 0; x < canvas.width; x += 4) {
+                    const index = (y * canvas.width + x) * 4;
+                    const alpha = pixels[index + 3];
+                    if (alpha > 0) {
+                        particles.push({
+                            x: x,
+                            y: y,
+                            speed: Math.random() * 2 + 1,
+                            radius: Math.random() * 1.5 + 0.5
+                        });
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                ctx.fill();
+
+                p.y += p.speed;
+
+                if (p.y > canvas.height) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+
+            if (particles.length > 0) {
+                requestAnimationFrame(animateParticles);
+            } else {
+                section1.style.visibility = 'hidden';
+            }
+        }
+
+        section1.addEventListener('click', () => {
+            resizeCanvas();
+            createParticles();
+            animateParticles();
+        });
+
+        // Cursor halo effect
+        const section2 = document.getElementById('section2');
+        const halo = section2.querySelector('.halo');
+
+        section2.addEventListener('mousemove', (e) => {
+            const rect = section2.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            halo.style.left = `${x}px`;
+            halo.style.top = `${y}px`;
+        });
+
+        section2.addEventListener('mouseenter', () => {
+            halo.style.display = 'block';
+        });
+
+        section2.addEventListener('mouseleave', () => {
+            halo.style.display = 'none';
+        });
+
+        // Typewriter effect
+const typewriterElement = document.querySelector('#section3 .typewriter');
+const startTypewriterButton = document.getElementById('startTypewriter');
+
+function startTypewriter() {
+    typewriterElement.classList.add('typing');
+    startTypewriterButton.disabled = true;
+    
+    // Remove the 'typing' class after the animation completes
+    setTimeout(() => {
+        typewriterElement.classList.remove('typing');
+        startTypewriterButton.disabled = false;
+    }, 3500); // This should match the transition duration in CSS
+}
+
+startTypewriterButton.addEventListener('click', startTypewriter);
+
+document.getElementById('section3').style.visibility = 'visible';
+        // Function to check if an element is in viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+     
+    </script>
+</body>
+</html>
