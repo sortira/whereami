@@ -31,6 +31,28 @@
             transition: all 0.5s ease; /* Smooth transition on hover */
         }
 
+        .button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+    margin: 20px; /* Add some margin around the container */
+}
+
+.btn-custom {
+    width: 100%; /* Full width for each button */
+    max-width: 300px; /* Optional: limit the max width of buttons */
+    padding: 15px; /* Add padding for a better touch area */
+    font-size: 1.2em; /* Increase font size for readability */
+    margin-bottom: 15px; /* Space between buttons */
+}
+
+@media (max-width: 600px) {
+    .btn-custom {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+}
+
+
         /* Hover effect */
         .btn-custom:hover {
             background-color: black; /* Black background on hover */
@@ -65,11 +87,13 @@
             <p style="font-size: smaller;">NOTE: if you are one of the judges for WebGame IIEST, <i>please</i> check the about page.</p>
             <!-- Buttons with custom hover effect -->
             <div class="mt-4">
-                <button class="btn btn-custom me-3" onclick="window.location.href='game.html';">Start Game</button>
-                <button class="btn btn-custom me-3" onclick="window.location.href='about.html';">About</button>
-                <button class="btn btn-custom me-3 mt-3" onclick="window.location.href='rules.html';">Rules</button>
-                <button id='install' class="btn btn-custom me-3">Install App</button>
-            
+                <div class="button-container">
+                    <button class="btn btn-custom me-3" onclick="window.location.href='game.html';">Start Game</button>
+                    <button class="btn btn-custom me-3" onclick="window.location.href='about.html';">About</button>
+                    <button class="btn btn-custom me-3 mt-3" onclick="window.location.href='rules.html';">Rules</button>
+                    <button id='install' class="btn btn-custom me-3">Install App</button>
+                </div>
+                
             </div>
             
         </div>
