@@ -7,9 +7,9 @@ window.onload = function() {
     floatingBox.innerHTML = `
         <div class="box-content">
             <p class="lead">If you are the judge, which one are you?</p>
-            <button class="btn btn-custom" id="btnJudge1">UI/UX Lead</button>
-            <button class="btn btn-custom" id="btnJudge2">Dev Lead</button>
-            <button class="btn btn-custom" id="btnJudge3">None</button>
+            <button class="btn btn-custom me-3" id="btnJudge1">UI/UX Lead</button>
+            <button class="btn btn-custom me-3" id="btnJudge2">Dev Lead</button>
+            <button class="btn btn-custom me-3 mt-3" id="btnJudge3">None</button>
         </div>
     `;
 
