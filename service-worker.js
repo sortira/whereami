@@ -2,17 +2,17 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
       caches.open('whereami-cache').then((cache) => {
         return cache.addAll([
-          'https://github.com/sortira/whereami/index.html',
-          'https://github.com/sortira/whereami/about.html',
-          'https://github.com/sortira/whereami/game.html',
-          'https://github.com/sortira/whereami/rules.html',
-          'https://github.com/sortira/whereami/uiux.html',
-          'https://github.com/sortira/whereami/game.js',
-          'https://github.com/sortira/whereami/about.js',
-          'https://github.com/sortira/whereami/wrong.mp3',
-          'https://github.com/sortira/whereami/correct.mp3',
-          'https://github.com/sortira/whereami/gameover.mp3',
-          'https://github.com/sortira/whereami/favicon.png',
+          'https://sortira.github.io/whereami/index.html',
+          'https://sortira.github.io/wherami/about.html',
+          'https://sortira.github.io/whereami/game.html',
+          'https://sortira.github.io/whereami/rules.html',
+          'https://sortira.github.io/whereami/uiux.html',
+          'https://sortira.github.io/whereami/game.js',
+          'https://sortira.github.io/whereami/about.js',
+          'https://sortira.github.io/whereami/wrong.mp3',
+          'https://sortira.github.io/whereami/correct.mp3',
+          'https://sortira.github.io/whereami/gameover.mp3',
+          'https://sortira.github.io/whereami/favicon.png',
         ]);
       })
     );
