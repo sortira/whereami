@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     // Create the floating box element
     const floatingBox = document.createElement("div");
     floatingBox.id = "floatingBox";
@@ -17,13 +17,13 @@ window.onload = function() {
     document.body.appendChild(floatingBox);
 
     // Add event listeners to the buttons to hide the box on click
-    document.getElementById("btnJudge1").onclick = function() {
+    document.getElementById("btnJudge1").onclick = function () {
         window.location.href = 'uiux.html';
     };
-    document.getElementById("btnJudge2").onclick = function() {
-        window.location.href = 'devlead.html';    
+    document.getElementById("btnJudge2").onclick = function () {
+        window.location.href = 'devlead.html';
     };
-    document.getElementById("btnJudge3").onclick = function() {
+    document.getElementById("btnJudge3").onclick = function () {
         floatingBox.style.display = "none";
     };
 };

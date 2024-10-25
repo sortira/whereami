@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 
@@ -8,7 +9,7 @@
     <meta property="og:image" content="https://sortira.github.io/whereami/favicon.png"> <!-- URL to the image -->
     <meta property="og:url" content="https://sortira.github.io/whereami/index.html">
     <meta property="og:type" content="website">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Where Am I?">
@@ -19,16 +20,18 @@
     <title>Where Am I?</title>
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
     <style>
-
         * {
             font-family: "Ubuntu", sans-serif;
-            
-        }   
+
+        }
 
         /* Custom CSS to make the container fill the entire viewport height */
         .full-height {
@@ -37,67 +40,89 @@
 
         /* Button styling */
         .btn-custom {
-            font-size: 1.2rem; /* To match the size with the lead text */
-            border: 2px solid black; /* Black border */
-            color: black; /* Black text */
-            background-color: white; /* White background */
-            transition: all 0.5s ease; /* Smooth transition on hover */
+            font-size: 1.2rem;
+            /* To match the size with the lead text */
+            border: 2px solid black;
+            /* Black border */
+            color: black;
+            /* Black text */
+            background-color: white;
+            /* White background */
+            transition: all 0.5s ease;
+            /* Smooth transition on hover */
         }
 
         .button-container {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center align buttons */
-    margin: 20px; /* Add some margin around the container */
-}
+            display: flex;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            align-items: center;
+            /* Center align buttons */
+            margin: 20px;
+            /* Add some margin around the container */
+        }
 
-.btn-custom {
-    width: 100%; /* Full width for each button */
-    max-width: 300px; /* Optional: limit the max width of buttons */
-    padding: 15px; /* Add padding for a better touch area */
-    font-size: 1.2em; /* Increase font size for readability */
-    margin-bottom: 15px; /* Space between buttons */
-}
+        .btn-custom {
+            width: 100%;
+            /* Full width for each button */
+            max-width: 300px;
+            /* Optional: limit the max width of buttons */
+            padding: 15px;
+            /* Add padding for a better touch area */
+            font-size: 1.2em;
+            /* Increase font size for readability */
+            margin-bottom: 15px;
+            /* Space between buttons */
+        }
 
-@media (max-width: 600px) {
-    .btn-custom {
-        font-size: 1em; /* Adjust font size for smaller screens */
-    }
-}
+        @media (max-width: 600px) {
+            .btn-custom {
+                font-size: 1em;
+                /* Adjust font size for smaller screens */
+            }
+        }
 
 
         /* Hover effect */
         .btn-custom:hover {
-            background-color: black; /* Black background on hover */
-            color: white; /* White text on hover */
-            border-color: black; /* Ensure border stays black */
+            background-color: black;
+            /* Black background on hover */
+            color: white;
+            /* White text on hover */
+            border-color: black;
+            /* Ensure border stays black */
         }
     </style>
 </head>
+
 <body>
 
     <div class="container d-flex justify-content-center align-items-center full-height">
         <div class="text-center">
             <div class="d-flex align-items-center justify-content-center mb-3">
-                <img src="favicon.png" alt="Logo" class="img-fluid" style="width: 10vw; height: 10vw; margin-right: 10px;">
+                <img src="favicon.png" alt="Logo" class="img-fluid"
+                    style="width: 10vw; height: 10vw; margin-right: 10px;">
                 <h1 class="display-2">Where am I?</h1>
             </div>
-            
-            <p class="lead">A game based off GeoGuessr, but much more simpler. Choose the hints you want, and guess. Three strikes and you're out.</p>
-            
+
+            <p class="lead">A game based off GeoGuessr, but much more simpler. Choose the hints you want, and guess.
+                Three strikes and you're out.</p>
+
             <figure class="text-center">
                 <blockquote class="blockquote">
                     <p>Learning about countries is a great way to enhance one's knowledge</p>
                 </blockquote>
                 <figcaption class="blockquote-footer">
-                    The <a href="https://github.com/sortira" target="_blank" rel="noopener noreferrer">developer of this</a> site who wants to win
+                    The <a href="https://github.com/sortira" target="_blank" rel="noopener noreferrer">developer of
+                        this</a> site who wants to win
                     <cite title="Source Title">the WebGame Challenge @ CodeIIEST</cite> and wants you to play this.
                 </figcaption>
             </figure>
 
 
 
-            <p style="font-size: smaller;">NOTE: if you are one of the judges for WebGame IIEST, <i>please</i> check the about page.</p>
+            <p style="font-size: smaller;">NOTE: if you are one of the judges for WebGame IIEST, <i>please</i> check the
+                about page.</p>
             <!-- Buttons with custom hover effect -->
             <div class="mt-4">
                 <div class="button-container">
@@ -106,53 +131,56 @@
                     <button class="btn btn-custom me-3 mt-3" onclick="window.location.href='rules.html';">Rules</button>
                     <button id='install' class="btn btn-custom me-3">Install App</button>
                 </div>
-                
+
             </div>
-            
+
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script>
         let deferredPrompt;
 
-// Listen for the beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', (event) => {
-  // Prevent the mini-info bar from appearing on mobile
-  event.preventDefault();
-  // Stash the event so it can be triggered later
-  deferredPrompt = event;
-});
-
-
-document.getElementById('install').addEventListener('click', () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt(); // Show the install prompt
-        deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-        } else {
-            console.log('User dismissed the A2HS prompt');
-        }
-        deferredPrompt = null; // Clear the deferredPrompt
+        // Listen for the beforeinstallprompt event
+        window.addEventListener('beforeinstallprompt', (event) => {
+            // Prevent the mini-info bar from appearing on mobile
+            event.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPrompt = event;
         });
-    }
-});
+
+
+        document.getElementById('install').addEventListener('click', () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt(); // Show the install prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the A2HS prompt');
+                    } else {
+                        console.log('User dismissed the A2HS prompt');
+                    }
+                    deferredPrompt = null; // Clear the deferredPrompt
+                });
+            }
+        });
 
 
 
         if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('https://sortira.github.io/whereami/service-worker.js', { scope: '/whereami/' })
-              .then((registration) => {
-                console.log('Service Worker registered with scope:', registration.scope);
-              })
-              .catch((error) => {
-                console.error('Service Worker registration failed:', error);
-              });
-          });
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('https://sortira.github.io/whereami/service-worker.js', { scope: '/whereami/' })
+                    .then((registration) => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
         }
-      </script>
-      
+    </script>
+
 </body>
+
 </html>

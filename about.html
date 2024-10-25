@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,69 +9,84 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
     <style>
+        /* Floating box overlay */
+        #floatingBox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent background */
+            z-index: 1000;
+            /* Ensure it is above other content */
+        }
 
-            /* Floating box overlay */
-    #floatingBox {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-        z-index: 1000; /* Ensure it is above other content */
-    }
+        /* Box content styling */
+        #floatingBox .box-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
 
-    /* Box content styling */
-    #floatingBox .box-content {
-        background-color: white;
-        padding: 30px;
-        border-radius: 10px;
-        text-align: center;
-        max-width: 500px;
-        width: 100%;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
+        #floatingBox .box-content p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
 
-    #floatingBox .box-content p {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
+        #floatingBox .box-content .btn {
+            margin: 0 10px;
+        }
 
-    #floatingBox .box-content .btn {
-        margin: 0 10px;
-    }
-
-         * {
+        * {
             font-family: "Ubuntu", sans-serif;
-        } 
+        }
 
         body {
             background-color: white;
             color: black;
         }
+
         .btn-custom {
-            font-size: 1.2rem; /* To match the size with the lead text */
-            border: 2px solid black; /* Black border */
-            color: black; /* Black text */
-            background-color: white; /* White background */
-            transition: all 0.5s ease; /* Smooth transition on hover */
+            font-size: 1.2rem;
+            /* To match the size with the lead text */
+            border: 2px solid black;
+            /* Black border */
+            color: black;
+            /* Black text */
+            background-color: white;
+            /* White background */
+            transition: all 0.5s ease;
+            /* Smooth transition on hover */
         }
+
         .btn-custom:hover {
-            background-color: black; /* Black background on hover */
-            color: white; /* White text on hover */
-            border-color: black; /* Ensure border stays black */
+            background-color: black;
+            /* Black background on hover */
+            color: white;
+            /* White text on hover */
+            border-color: black;
+            /* Ensure border stays black */
         }
+
         .card {
             border: 2px solid black;
         }
+
         .about-section {
             margin-top: 50px;
         }
@@ -80,11 +96,12 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-       
-            <h1 class="display-3">About "Where Am I?"</h1>
-            <p class="lead">A minimalistic game to discover the world through text only facts. Be the next Rainbolt.</p>
+
+        <h1 class="display-3">About "Where Am I?"</h1>
+        <p class="lead">A minimalistic game to discover the world through text only facts. Be the next Rainbolt.</p>
 
         <!-- About Content Section -->
         <section class="about-section">
@@ -92,7 +109,11 @@
                 <div class="card-body">
                     <h5 class="card-title">What is <em>Where Am I?</em></h5>
                     <p class="card-text">
-                        Inspired heavily by the popular game GeoGuessr, <em>Where Am I?</em> is a text-based game that challenges players to guess the country based on a series of hints which have risks and rewards associated with their nature. These hints can include facts about the country's geography, culture, history, and more. The game is designed to be simple and fun, making it accessible to players of all ages and backgrounds.
+                        Inspired heavily by the popular game GeoGuessr, <em>Where Am I?</em> is a text-based game that
+                        challenges players to guess the country based on a series of hints which have risks and rewards
+                        associated with their nature. These hints can include facts about the country's geography,
+                        culture, history, and more. The game is designed to be simple and fun, making it accessible to
+                        players of all ages and backgrounds.
                     </p>
                 </div>
             </div>
@@ -100,9 +121,14 @@
                 <div class="card-body">
                     <h5 class="card-title">How Does It Work?</h5>
                     <p class="card-text">
-                        At the start of each round, select five hints from a list of options. After making your selections, these hints will be displayed along with an input box for your guess. Enter the country name and see if you're correct! Points are awarded or deducted based on your accuracy, and you can play for a total of five rounds.
+                        At the start of each round, select five hints from a list of options. After making your
+                        selections, these hints will be displayed along with an input box for your guess. Enter the
+                        country name and see if you're correct! Points are awarded or deducted based on your accuracy,
+                        and you can play for a total of five rounds.
 
-                        If you're stuck, you can use the hints to help you out. However, be careful - some hints are riskier than others and can result in a higher reward or penalty. Choose wisely, or play Russian Roulette, the dev doesn't care as long as he gets the WebGame Challenge @ CodeIIEST.
+                        If you're stuck, you can use the hints to help you out. However, be careful - some hints are
+                        riskier than others and can result in a higher reward or penalty. Choose wisely, or play Russian
+                        Roulette, the dev doesn't care as long as he gets the WebGame Challenge @ CodeIIEST.
                     </p>
                 </div>
             </div>
@@ -111,23 +137,27 @@
                 <div class="card-body">
                     <h5 class="card-title">Game Features</h5>
                     <ul class="list-group">
-                        <li class="list-group-item" style="border: 2px solid black;">Five Rounds to Challenge Your Knowledge</li>
+                        <li class="list-group-item" style="border: 2px solid black;">Five Rounds to Challenge Your
+                            Knowledge</li>
                         <li class="list-group-item" style="border: 2px solid black;">Hints Including Text </li>
-                        <li class="list-group-item" style="border: 2px solid black;">Score Tracking Based on Your Performance</li>
-                        <li class="list-group-item" style="border: 2px solid black;">Interactive Guessing with Feedback</li>
+                        <li class="list-group-item" style="border: 2px solid black;">Score Tracking Based on Your
+                            Performance</li>
+                        <li class="list-group-item" style="border: 2px solid black;">Interactive Guessing with Feedback
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        
+
         <footer class="text-center mt-5 mb-5">
             <a href="index.html" class="btn btn-custom">Home</a>
             <a href="game.html" class="btn btn-custom ml-3">Play Now</a>
             <a href="rules.html" class="btn btn-custom ml-3">Rules</a>
-            <p class="mt-4" style="color: grey; font-size: 0.9rem;">Copyright 2024-present Aritro 'sortira' Shome, Inspired by GeoGuessr.</p>
+            <p class="mt-4" style="color: grey; font-size: 0.9rem;">Copyright 2024-present Aritro 'sortira' Shome,
+                Inspired by GeoGuessr.</p>
         </footer>
-        
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -135,4 +165,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="about.js"></script>
 </body>
+
 </html>
