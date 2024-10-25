@@ -1,0 +1,80 @@
+* {
+    font-family: "Ubuntu", sans-serif;
+}
+
+/* Button styling */
+.btn-custom {
+    font-size: 1.2rem;
+    /* To match the size with the lead text */
+    border: 2px solid black;
+    /* Black border */
+    color: black;
+    /* Black text */
+    background-color: white;
+    /* White background */
+    transition: all 0.5s ease;
+    /* Smooth transition on hover */
+}
+
+/* Hover effect */
+.btn-custom:hover {
+    background-color: black;
+    /* Black background on hover */
+    color: white;
+    /* White text on hover */
+    border-color: black;
+    /* Ensure border stays black */
+}
+
+
+
+
+body {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.json-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.json-item {
+    margin-bottom: 10px;
+    border-left: 2px solid black;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.json-key {
+    color: black;
+    cursor: pointer;
+    font-weight: lighter;
+}
+
+.json-value {
+    color: black;
+    display: none;
+    margin-left: 20px;
+    letter-spacing: 1%;
+    word-wrap: break-word;
+}
+
+.json-item.open .json-value {
+    display: block;
+}
+
+.json-item:hover {
+    border-left-color: darkgray;
+}
+
+.json-item.open {
+    border-left-color: black;
+    border-left-width: 10px;
+}

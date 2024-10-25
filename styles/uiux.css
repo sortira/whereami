@@ -1,0 +1,166 @@
+* {
+    font-family: "Ubuntu", sans-serif
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header,
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    animation: slideDown 1s ease-out;
+}
+
+#section1 {
+    position: relative;
+    cursor: pointer;
+}
+
+#section1 canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+#section2 {
+    position: relative;
+    overflow: hidden;
+}
+
+#section2 .halo {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(128, 128, 128, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#section3 .typewriter {
+    overflow: hidden;
+    border-right: .15em solid transparent;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    max-width: 0;
+    font-size: 2vw;
+    transition: max-width 3.5s steps(40, end);
+}
+
+/* Button styling */
+.btn-custom {
+    font-size: 1.2rem;
+    /* To match the size with the lead text */
+    border: 2px solid black;
+    /* Black border */
+    color: black;
+    /* Black text */
+    background-color: white;
+    /* White background */
+    transition: all 0.5s ease;
+    /* Smooth transition on hover */
+}
+
+/* Hover effect */
+.btn-custom:hover {
+    background-color: black;
+    /* Black background on hover */
+    color: white;
+    /* White text on hover */
+    border-color: black;
+    /* Ensure border stays black */
+}
+
+
+#section3 .typewriter.typing {
+    max-width: 100%;
+    border-right-color: black;
+    animation: blink-caret .75s step-end infinite;
+}
+
+
+
+h3.display-3 {
+    font-size: 3vw;
+    font-weight: bold;
+    /* Adjusts based on viewport width */
+}
+
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+#section4 {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
