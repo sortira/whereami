@@ -20837,6 +20837,17 @@ const endGame = () => {
             <p class="card-text">History: ${history.map(item => item ? '<span class="w">W</span> ' : '<span class="l">L</span> ').join(' ')}</p>
             <div class="button-container mt-3">
             </div>
+            <div class="button-container mt-3">
+        <!-- WhatsApp Share Button -->
+        <a href="https://wa.me/?text=I%20scored%20${score.toFixed(2)}%20on%20%22Where%20Am%20I%3F%22.%20Can%20you%20beat%20it%3F%0ATry%20it%2C%20for%20free%2C%20no%20ads%20at%20https%3A%2F%2Fsortira.github.io%2Fwhereami" target="_blank" rel="noopener noreferrer" class="btn btn-custom me-2">
+            
+        </a>
+
+        <!-- Twitter Share Button -->
+        <a href="https://twitter.com/intent/tweet?text=I%20scored%20${score.toFixed(2)}%20on%20%22Where%20Am%20I%3F%22.%20Can%20you%20beat%20it%3F%0ATry%20it%2C%20for%20free%2C%20no%20ads%20at%20https%3A%2F%2Fsortira.github.io%2Fwhereami" target="_blank" rel="noopener noreferrer" class="btn btn-custom">
+            
+        </a>
+    </div>
         </div>
     `;
     hintsContainer.appendChild(endGameCard);
