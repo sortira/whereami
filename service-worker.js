@@ -1,27 +1,27 @@
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open('whereami-cache').then((cache) => {
-      return cache.addAll([
-        'https://sortira.github.io/whereami/index.html',
-        'https://sortira.github.io/wherami/about.html',
-        'https://sortira.github.io/whereami/game.html',
-        'https://sortira.github.io/whereami/rules.html',
-        'https://sortira.github.io/whereami/uiux.html',
-        'https://sortira.github.io/whereami/game.js',
-        'https://sortira.github.io/whereami/about.js',
-        'https://sortira.github.io/whereami/wrong.mp3',
-        'https://sortira.github.io/whereami/correct.mp3',
-        'https://sortira.github.io/whereami/gameover.mp3',
-        'https://sortira.github.io/whereami/favicon.png',
-      ]);
-    })
-  );
+// Install event: Force the new service worker to activate immediately
+self.addEventListener('install', event => {
+  self.skipWaiting();  // Forces the waiting service worker to become the active one
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+// Activate event: Clean up old caches and immediately take control of clients
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== 'whereami-cache') {  // Replace 'your-cache-name' with your actual cache name
+            return caches.delete(cache);  // Deletes old caches that don't match the current cache name
+          }
+        })
+      );
     })
   );
+  self.clients.claim();  // Takes control of all clients immediately
+});
+
+// Listen for 'SKIP_WAITING' message to activate the new service worker immediately
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
