@@ -1,0 +1,10 @@
+
+User-agent: *
+Disallow:
+
+# Block specific files
+Disallow: /uiux.html
+Disallow: /devlead.html
+
+# Sitemap location
+Sitemap: https://sortira.github.io/whereami/sitemap.xml

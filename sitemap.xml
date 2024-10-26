@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://sortira.github.io/whereami/</loc>
+    <lastmod>2024-10-26</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+
+  <url>
+    <loc>https://sortira.github.io/whereami/game.html</loc>
+    <lastmod>2024-10-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sortira.github.io/whereami/about.html</loc>
+    <lastmod>2024-10-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://sortira.github.io/whereami/rules.html</loc>
+    <lastmod>2024-10-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
