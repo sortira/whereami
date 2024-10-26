@@ -20953,7 +20953,7 @@ const startGameRound = (selectedHints) => {
             flagImage.src = `https://flagsapi.com/${country["alpha2Code"]}/flat/64.png`;
             flagImage.alt = `Flag Image`;
             flagImage.style.margin = "5px";  // Spacing around the image
-            flagImage.style.border = "2px solid black";
+    
             flagImage.style.display = "inline-block";  // Ensures the border hugs the image tightly
             flagImage.style.padding = "0";  // Remove any padding
             flagImage.style.boxSizing = "border-box";  // Include border in image size
