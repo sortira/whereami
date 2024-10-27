@@ -17,6 +17,7 @@
 ## Features
 
 - **Single Player Mode**: Guess the location and see if you’re right!
+- **Multi Player Mode**: Create a game, choose your own set of hints, see the leaderboard to see who's the smartest.
 - **Intuitive Interface**: Simple, responsive design with a light, minimalist theme, meaningful colours, and smooth button interactions.
 - **Offline Support**: Play offline, thanks to a Service Worker setup.
 - **Educational and Fun**: Hone your geography skills while having fun.
@@ -25,6 +26,11 @@
 
 1. **Start the Game**: Load the page and enter the main game screen.
 2. **Guess the Location**: Choose clues based on strategy or thrill and guess what the country is.
+
+For multiplayer
+
+1. **Create a game**: Generate a gameId and share it with your friends.
+2. **Join and play**: Join using the generated gameId (or one you already have) and play. 
 
 
 ## Installation
@@ -44,7 +50,7 @@ To run the project locally:
 
 2. Open `index.html` in your preferred browser.
 
-> Note: This project includes a service worker located at `/whereami/service-worker.js`, ensuring offline support.
+> Note: This project includes a service worker located at `/whereami/service-worker.js`, ensuring app support.
 
 ## Usage
 
