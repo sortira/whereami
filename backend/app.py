@@ -88,7 +88,7 @@ def get_round_data():
             return jsonify({'error': 'Invalid round number'}), 400
         
         # Get the country for the specified round
-        country = countries[round_number]
+        country = countries[game_data[round_number]]
         
         # Return the response
         return jsonify(country), 200
@@ -123,6 +123,11 @@ def send_player_data():
     try:
         # Update the game document with player data
         game_ref = games_collection.document(game_id)
+        existing_players = game_ref.to_dict().get('players', [])
+        # Check if a player with the same player_name already exists
+        player_name = player_data.get('player_name')
+        if any(player.get('player_name') == player_name for player in existing_players):
+            return jsonify({'message': 'Player already exists'}), 400
         game_ref.set({
             'players': firestore.ArrayUnion([player_data])  # Append player data to 'players' array
         }, merge=True)  # Use merge=True to keep existing data
