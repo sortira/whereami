@@ -47,8 +47,11 @@
         <p class="lead">Enter your Game ID to view the leaderboard.</p>
 
         <input type="text" id="gameIdInput" class="form-control mt-3" placeholder="Enter Game ID" required />
-        <button id="fetch-leaderboard-button" class="btn btn-custom mt-3">Get Leaderboard</button>
-
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <button id="home" class="btn btn-custom me-3" onclick="window.location.href='https://sortira.github.io/whereami/';">Home</button>
+            <button id="fetch-leaderboard-button" class="btn btn-custom mt-3 mt-md-0">Get Leaderboard</button>
+        </div>
+        
         <div id="error-message" class="text-danger mt-3" style="display: none;"></div>
 
         <!-- Leaderboard Display -->

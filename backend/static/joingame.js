@@ -139,14 +139,14 @@ const endGame = async () => {
     leaderboardButton.className = "btn btn-custom mt-3 mr-3";
     leaderboardButton.textContent = "See LeaderBoard";
     leaderboardButton.onclick = () => {
-        window.location.href = '/get-leaderboard';
+        window.location.href = 'https://whereamigame.pythonanywhere.com/get-leaderboard';
     };
 
     const playAgainButton = document.createElement('button');
     playAgainButton.className = "btn btn-custom mt-3 mr-3";
     playAgainButton.textContent = "Play Again";
     playAgainButton.onclick = () => {
-        window.location.href = '/joingame';
+        window.location.href = 'https://whereamigame.pythonanywhere.com/joingame';
     };
 
     const homeButton = document.createElement('button');
