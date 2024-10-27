@@ -122,13 +122,13 @@ def send_player_data():
     # Save player data to Firestore
     try:
         # Update the game document with player data
-        game_ref = games_collection.document(game_id)
+        game_ref = games_collection.document(game_id).get()
         existing_players = game_ref.to_dict().get('players', [])
         # Check if a player with the same player_name already exists
         player_name = player_data.get('player_name')
         if any(player.get('player_name') == player_name for player in existing_players):
             return jsonify({'message': 'Player already exists'}), 400
-        game_ref.set({
+        games_collection.document(game_id).set({
             'players': firestore.ArrayUnion([player_data])  # Append player data to 'players' array
         }, merge=True)  # Use merge=True to keep existing data
 
