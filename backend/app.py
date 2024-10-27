@@ -38,7 +38,25 @@ games_collection = db.collection('games')  # Collection name in Firestore
 @app.route('/create-game', methods=['POST'])
 def create_game():
     # Generate a unique game ID
+   # Define the URL-safe 66 alphabet
+    urlsafe_66_alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-.~'
+
+    def numberToBase(n, b):
+        """Convert a number n to base b."""
+        if n == 0:
+            return "0"
+        digits = []
+        while n:
+            digits.append(urlsafe_66_alphabet[n % b])
+            n //= b
+        return ''.join(digits[::-1])
+
+    # Generate a UUID and convert it to an integer
     game_id = str(uuid.uuid4())
+    game_id_int = int(game_id.replace('-', ''), 16)  # Convert UUID to an integer
+
+    # Convert the integer to base 66
+    short_game_id = numberToBase(game_id_int, 66)
     
     game_data = []
 
@@ -47,15 +65,15 @@ def create_game():
 
     # Save game ID info in Firestore
     game_data = {
-        'game_id': game_id,
+        'game_id': short_game_id,
         'status': 'active',
         'game_data': game_data,
         'players': []
     }
-    games_collection.document(game_id).set(game_data)
+    games_collection.document(short_game_id).set(game_data)
     
     # Return the generated game ID as JSON
-    return jsonify({'game_id': game_id}), 201
+    return jsonify({'game_id': short_game_id}), 201
 
 @app.route('/creategame', methods=["GET"])
 def serve_create_game():
