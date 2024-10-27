@@ -20829,10 +20829,13 @@ const endGame = () => {
     const endGameCard = document.createElement('div');
     endGameCard.className = "card mt-4";
     endGameCard.style.border = "2px solid black";
+    let message = '';
 
+    if(score > 5) message = 'Good job!';
+    else message = 'Try Harder!';
     endGameCard.innerHTML = `
         <div class="card-body text-center">
-            <h5 class="card-title">Game Over!</h5>
+            <h5 class="card-title">${message}</h5>
             <p class="card-text">Your Score: ${score.toFixed(2)}</p>
             <p class="card-text">History: ${history.map(item => item ? '<span class="w">W</span> ' : '<span class="l">L</span> ').join(' ')}</p>
             <div class="button-container mt-3">
