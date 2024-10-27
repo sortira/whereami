@@ -153,7 +153,7 @@ const endGame = async () => {
     homeButton.className = "btn btn-custom mt-3 ml-3";
     homeButton.textContent = "Home";
     homeButton.onclick = () => {
-        window.location.href = 'https://sortira.github.io/index.html';
+        window.location.href = 'https://sortira.github.io/whereami/index.html';
     };
 
     const buttonContainer = endGameCard.querySelector('.button-container');
