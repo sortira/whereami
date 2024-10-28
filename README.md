@@ -35,7 +35,7 @@ For multiplayer
 
 ## Installation
 
-This game is hosted on GitHub Pages and can be accessed directly at [https://sortira.github.io/](https://sortira.github.io/).
+This game is hosted on GitHub Pages and can be accessed directly at [https://sortira.github.io/](https://sortira.github.io/whereami).
 
 Alternatively, it is also hosted on Vercel [here](https://whereami-six.vercel.app/).
 
