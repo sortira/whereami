@@ -3,6 +3,7 @@ self.addEventListener('install', event => {
   self.skipWaiting();  // Forces the waiting service worker to become the active one
 });
 
+//This code takes care of auto-updation.
 // Activate event: Clean up old caches and immediately take control of clients
 self.addEventListener('activate', event => {
   event.waitUntil(
