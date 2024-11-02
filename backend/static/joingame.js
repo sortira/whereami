@@ -6,6 +6,7 @@ let hints = [];
 let score = 0.0;
 let incorrect = 0;
 let json_codes = {};
+let timeRemaining = 250;
 let gameId = '';
 let playerName = '';
 const correctAudio = new Audio('https://sortira.github.io/whereami/correct.mp3');
@@ -232,14 +233,29 @@ const startGameRound = async (selectedHints) => {
     roundCard.className = "card mt-4";
     roundCard.style.border = "2px solid black";
 
-    roundCard.innerHTML = `
-        <div class="card-body text-center">
-        <h5 class="card-title">Round ${round} / 5</h5>
-        <p class="card-text">Score: ${score.toFixed(2)}</p>
-        <p class="card-text">Lives Remaining: ${lives}</p>
-        <p class="card-text">History: ${history.map(item => item ? '<span class = "w">W</span> ' : '<span class="l">L</span> ').join(' ')}</p>
-    </div>
-    `;
+    let formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    };
+
+    const timerInterval = setInterval(() => {
+        if (timeRemaining <= 0) {
+            clearInterval(timerInterval); 
+            endGame(); 
+        } else {
+            timeRemaining--; 
+            roundCard.innerHTML = `
+                <div class="card-body text-center">
+                    <h5 class="card-title">Round ${round} / 5</h5>
+                    <p class="card-text">Score: ${score.toFixed(2)}</p>
+                    <p class="card-text">Time Remaining: ${formatTime(timeRemaining)}</p>
+                    <p class="card-text">Lives Remaining: ${lives}</p>
+                    <p class="card-text">History: ${history.map(item => item ? '<span class="w">W</span> ' : '<span class="l">L</span> ').join(' ')}</p>
+                </div>
+            `;
+        }
+    }, 1000); // Update every second
 
     hintsContainer.appendChild(roundCard);
 

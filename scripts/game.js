@@ -6,6 +6,7 @@ let hints = [];
 let score = 0.0;
 let incorrect = 0;
 let json_codes = {};
+let timeRemaining = 250;
 
 const correctAudio = new Audio('correct.mp3');
 const wrongAudio = new Audio('wrong.mp3');
@@ -20831,7 +20832,7 @@ const endGame = () => {
     endGameCard.style.border = "2px solid black";
     let message = '';
 
-    if(score > 5) message = 'Good job!';
+    if (score > 5) message = 'Good job!';
     else message = 'Try Harder!';
     endGameCard.innerHTML = `
         <div class="card-body text-center">
@@ -20895,7 +20896,9 @@ function showFloatingMessage(isCorrect) {
     floatingMessage.style.opacity = "1";
 
     document.body.appendChild(floatingMessage);
-
+    if(isCorrect === "time over") {
+        floatingMessage.textContent = "Time Over!";
+    }
     setTimeout(() => {
         floatingMessage.style.transition = "all 1s ease";
         floatingMessage.style.opacity = "0";
@@ -20932,14 +20935,29 @@ const startGameRound = (selectedHints) => {
     roundCard.className = "card mt-4";
     roundCard.style.border = "2px solid black";
 
-    roundCard.innerHTML = `
-        <div class="card-body text-center">
-        <h5 class="card-title">Round ${round} / 5</h5>
-        <p class="card-text">Score: ${score.toFixed(2)}</p>
-        <p class="card-text">Lives Remaining: ${lives}</p>
-        <p class="card-text">History: ${history.map(item => item ? '<span class = "w">W</span> ' : '<span class="l">L</span> ').join(' ')}</p>
-    </div>
-    `;
+    let formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    };
+
+    const timerInterval = setInterval(() => {
+        if (timeRemaining <= 0) {
+            clearInterval(timerInterval); 
+            endGame(); 
+        } else {
+            timeRemaining--; 
+            roundCard.innerHTML = `
+                <div class="card-body text-center">
+                    <h5 class="card-title">Round ${round} / 5</h5>
+                    <p class="card-text">Score: ${score.toFixed(2)}</p>
+                    <p class="card-text">Time Remaining: ${formatTime(timeRemaining)}</p>
+                    <p class="card-text">Lives Remaining: ${lives}</p>
+                    <p class="card-text">History: ${history.map(item => item ? '<span class="w">W</span> ' : '<span class="l">L</span> ').join(' ')}</p>
+                </div>
+            `;
+        }
+    }, 1000); // Update every second
 
     hintsContainer.appendChild(roundCard);
 
@@ -20956,7 +20974,7 @@ const startGameRound = (selectedHints) => {
             flagImage.src = `https://flagsapi.com/${country["alpha2Code"]}/flat/64.png`;
             flagImage.alt = `Flag Image`;
             flagImage.style.margin = "5px";  // Spacing around the image
-    
+
             flagImage.style.display = "inline-block";  // Ensures the border hugs the image tightly
             flagImage.style.padding = "0";  // Remove any padding
             flagImage.style.boxSizing = "border-box";  // Include border in image size
