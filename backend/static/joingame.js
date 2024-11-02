@@ -114,7 +114,7 @@ const endGame = async () => {
     endGameCard.style.border = "2px solid black";
     let message = '';
 
-    if(score > 5) message = 'Good job!';
+    if (score > 5) message = 'Good job!';
     else message = 'Try Harder!';
     endGameCard.innerHTML = `
         <div class="card-body text-center">
@@ -125,10 +125,9 @@ const endGame = async () => {
             </div>
             <div class="button-container mt-3">
         <!-- WhatsApp Share Button -->
-        <a href="https://wa.me/?text=I%20scored%20${score.toFixed(2)}%20on%20%22Where%20Am%20I%3F%22.%20Can%20you%20beat%20it%3F%0ATry%20it%2C%20for%20free%2C%20no%20ads%20at%20https%3A%2F%2Fsortira.github.io%2Fwhereami" target="_blank" rel="noopener noreferrer" class="btn btn-custom me-2">
+        <a href="https://wa.me/?text=I%20scored%20${score.toFixed(2)}%20on%20%22Where%20Am%20I%22%20in%20Room%20ID%20${gameId}.%20Can%20you%20beat%20it%3F%0ATry%20it%20for%20free%2C%20no%20ads%2C%20at%20https%3A%2F%2Fsortira.github.io%2Fwhereami" target="_blank" rel="noopener noreferrer" class="btn btn-custom me-2">
             Share on WhatsApp
         </a>
-
         <!-- Twitter Share Button -->
         <a href="https://twitter.com/intent/tweet?text=I%20scored%20${score.toFixed(2)}%20on%20%22Where%20Am%20I%3F%22.%20Can%20you%20beat%20it%3F%0ATry%20it%2C%20for%20free%2C%20no%20ads%20at%20https%3A%2F%2Fsortira.github.io%2Fwhereami" target="_blank" rel="noopener noreferrer" class="btn btn-custom">
             Share on Twitter
