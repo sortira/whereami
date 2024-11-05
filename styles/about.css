@@ -54,6 +54,7 @@ body {
     /* White background */
     transition: all 0.5s ease;
     /* Smooth transition on hover */
+    padding: 5px;
 }
 
 .btn-custom:hover {
