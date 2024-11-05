@@ -23,14 +23,15 @@
     <div class="json-container">
         <h2>Hello, Soumyajit <i>bhaiya</i></h2>
 
-        <p class="lead">Thanks for coming to this special page, however do read the About page after clicking None once
-            as well for the rules and scoring system of <i>Where Am I?</i></p>
+        <p class="lead">This page (stylised as a json object) explains some choices and motives behind how the
+            application logic is structured, make sure to read the Rules before you play <i>Where Am I?</i></p>
 
         <div class="json-item">
             <h2 class="json-key">"Why does <i>Where Am I?</i> have no auth?"</h2>
             <div class="json-value">
                 "<i>Where Am I?</i> was originally designed to run without internet, so no auth was implemented.
-                However, internet is needed for certain assets, but I figured auth and other features would make
+                However, internet is needed for certain assets and multiplayer, but I figured auth and other features
+                would make
                 <i>Where Am I?</i> addictive and less educational."
             </div>
         </div>
@@ -42,6 +43,7 @@
                 "dopamine triggers" : "not good for <i>Where Am I?</i> which is designed to be played in between of long
                 grind hours", <br />
                 "fun" : ["unlimited", "unlimited", "unlimited"] <br />
+                "multiplayer": "yes, but not for my target zen audience who use this as a grind break"<br />
                 }
             </div>
         </div>
@@ -49,10 +51,11 @@
             <h2 class="json-key">"Hmm, what tech stacks did you use to make <i>Where Am I?</i>"</h2>
             <div class="json-value">
                 { <br />
-                "ui/ux" : "HTML and CSS", <br />
-                "game logic" : "Javascript", <br />
-                "Libraries" : "Bootstrap and Google Fonts", <br />
-                "Why no frameworks?" : "I've been making text based RPGs in the browers for a long time, so vanilla JS
+                "ui/ux" : "HTML and CSS and vanilla JS, no frameworks.", <br />
+                "game logic" : "Javascript, and Python", <br />
+                "Libraries" : "Bootstrap, Google Fonts, Google Firebase Cloudstore and Flask on PythonAnywhere", <br />
+                "Why no frontend frameworks?" : "I've been making text based RPGs in the browers for a long time, so
+                vanilla JS
                 monoliths are more like my comfort zone. I'm looking forward to learn more about the frameworks though.
                 <i>Where Am I?</i> is a stepping stone." <br />
                 "Why does the JS render the game out and create HTML elements on the fly?" : "Again, I'm aware it's not
