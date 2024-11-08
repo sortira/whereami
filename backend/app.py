@@ -30,7 +30,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 service_account_path = os.path.join(script_dir, 'serviceAccountKey.json')
 
 # Initialize Firestore DB
-cred = credentials.Certificate(service_account_path)  # replace with the actual path
+cred = credentials.Certificate(service_account_path)  
 initialize_app(cred)
 db = firestore.client()
 games_collection = db.collection('games')  # Collection name in Firestore
