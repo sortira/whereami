@@ -3,6 +3,9 @@
 
 **Where Am I?** is a fun, browser-based guessing game inspired by *GeoGuessr*. Test your geography knowledge by guessing locations based on limited information!
 
+Note for the judges: Since the backend for the multiplayer is hosted on a free tier of PythonAnywhere, it takes some time for the inactive VM to spin up. Please bear with my financial constraints! Thank you!
+
+
 ## Table of Contents
 
 - [Features](#features)
